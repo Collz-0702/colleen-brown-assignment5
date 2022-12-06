@@ -1,23 +1,99 @@
 {
   "stats": {
-    "suites": 0,
-    "tests": 0,
-    "passes": 0,
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2022-11-29T20:49:47.794Z",
-    "end": "2022-11-29T20:49:47.797Z",
-    "duration": 3,
-    "testsRegistered": 0,
-    "passPercent": null,
-    "pendingPercent": null,
+    "start": "2022-12-06T22:17:20.561Z",
+    "end": "2022-12-06T22:17:29.666Z",
+    "duration": 9105,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false
   },
   "results": [
-    false
+    {
+      "uuid": "afd08513-ef11-41f2-b222-010b7d310170",
+      "title": "",
+      "fullFile": "cypress\\test-files\\addToCartCheckout.cy.js",
+      "file": "cypress\\test-files\\addToCartCheckout.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d6c0651d-d15a-424c-8569-dde354b8c48c",
+          "title": "Adding an item to cart",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should add Sauce Labs Bolt T-shirt item to cart",
+              "fullTitle": "Adding an item to cart should add Sauce Labs Bolt T-shirt item to cart",
+              "timedOut": null,
+              "duration": 5867,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_login.default.login('standard_user', 'secret_sauce');\ncy.get(_login.default.inventoryList).should('be.visible');\n_addToCart.default.addCart();\ncy.get(_addToCart.default.cartNumber).should('have.text', 1);\ncy.get(_addToCart.default.removeSauceLabBoltButton).should('be.visible');\ncy.get(_addToCart.default.cartItemName).should('have.text', 'Sauce Labs Bolt T-Shirt');\n_checkOut.default.checkOut('Colleen', 'Williams', '00000');\ncy.get(_checkOut.default.itemDescriptionName).should('have.text', 'Sauce Labs Bolt T-Shirt');\ncy.get(_checkOut.default.itemPrice).should('have.text', '$15.99');\n_checkOut.default.completeCheckOut();\ncy.get(_checkOut.default.completeMessage).should('have.text', 'Checkout: Complete!');\ncy.get(_checkOut.default.thankYouMessage).should('have.text', 'THANK YOU FOR YOUR ORDER');\ncy.get(_checkOut.default.backHomeButton).should('be.visible');\ncy.get(_checkOut.default.backHomeButton).click();\ncy.url().should('contain', 'inventory');\n_addToCart.default.navigateToCart();\ncy.get(_addToCart.default.cartItemName).should('not.exist');",
+              "err": {},
+              "uuid": "2743d5a1-d447-47f2-b32c-bc5a8dc49597",
+              "parentUUID": "d6c0651d-d15a-424c-8569-dde354b8c48c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should add more than one items to cart",
+              "fullTitle": "Adding an item to cart should add more than one items to cart",
+              "timedOut": null,
+              "duration": 3171,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_login.default.login('standard_user', 'secret_sauce');\ncy.get(_login.default.inventoryList).should('be.visible');\n_addToCart.default.addMultipleCartItems();\ncy.get(_addToCart.default.cartNumber).should('have.text', 3);\ncy.get(_addToCart.default.cartItemName).should('have.text', 'Sauce Labs Bolt T-ShirtSauce Labs BackpackSauce Labs Bike Light');\n_checkOut.default.checkOut('Colleen', 'Williams', '00000');\ncy.get(_checkOut.default.itemDescriptionName).should('have.text', 'Sauce Labs Bolt T-ShirtSauce Labs BackpackSauce Labs Bike Light');\ncy.get(_checkOut.default.itemPrice).should('have.text', '$15.99$29.99$9.99');\n_checkOut.default.completeCheckOut();\ncy.get(_checkOut.default.completeMessage).should('have.text', 'Checkout: Complete!');\ncy.get(_checkOut.default.thankYouMessage).should('have.text', 'THANK YOU FOR YOUR ORDER');\ncy.get(_checkOut.default.backHomeButton).should('be.visible');\ncy.get(_checkOut.default.backHomeButton).click();\ncy.url().should('contain', 'inventory');\n_addToCart.default.navigateToCart();\ncy.get(_addToCart.default.cartItemName).should('not.exist');",
+              "err": {},
+              "uuid": "c43317c4-9cfd-4168-9806-bc0296f81676",
+              "parentUUID": "d6c0651d-d15a-424c-8569-dde354b8c48c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2743d5a1-d447-47f2-b32c-bc5a8dc49597",
+            "c43317c4-9cfd-4168-9806-bc0296f81676"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9038,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
   ],
   "meta": {
     "mocha": {

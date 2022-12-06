@@ -3,7 +3,7 @@ import loginPage from '../page-objects/login.js'
 import addToCart from '../page-objects/addToCart.js'
 
 
-describe.skip('Removing an item', () => {
+describe('Removing an item', () => {
     beforeEach(() => {
         cy.visit('/')
     })
@@ -31,8 +31,6 @@ describe.skip('Removing an item', () => {
 
         addToCart.navigateToCart()
         cy.get(addToCart.cartItemName).should('not.exist')
-
-        // another assertion here
 
     })
 })

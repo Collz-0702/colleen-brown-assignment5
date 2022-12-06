@@ -5,8 +5,20 @@ class addToCart {
     get cartItem() {
         return ('#item_1_title_link')
     }
+    get cartItemTwo() {
+        return ('#item_4_title_link')
+    }
+    get cartItemThree() {
+        return ('#item_0_title_link')
+    }
     get addCartButton() {
         return ('#add-to-cart-sauce-labs-bolt-t-shirt')
+    }
+    get addCartButtonTwo() {
+        return ('#add-to-cart-sauce-labs-backpack')
+    }
+    get addCartButtonThree() {
+        return ('#add-to-cart-sauce-labs-bike-light')
     }
     get cartIcon() {
         return ('.shopping_cart_link')
@@ -23,20 +35,22 @@ class addToCart {
 
 
     addCart() {
-        cy.get(this.cartItem).should('be.visible')
         cy.get(this.cartItem).click()
         cy.get(this.addCartButton).click()
         cy.get(this.cartIcon).click()
     }
+    addMultipleCartItems() {
+        cy.get(this.addCartButton).click()
+        cy.get(this.addCartButtonTwo).click()
+        cy.get(this.addCartButtonThree).click()
+        cy.get(this.cartIcon).click()
+    }
 
     removeItemFromCart() {
-        cy.get(this.removeSauceLabBoltButton).should('be.visible')
         cy.get(this.removeSauceLabBoltButton).click()
     }
     removeItemFromProductPage() {
-        cy.get(this.addCartButton).should('be.visible')
         cy.get(this.addCartButton).click()
-        cy.get(this.removeSauceLabBoltButton).should('be.visible')
         cy.get(this.removeSauceLabBoltButton).click()
     }
     navigateToCart() {

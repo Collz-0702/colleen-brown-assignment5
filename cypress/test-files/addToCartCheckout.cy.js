@@ -3,7 +3,7 @@ import loginPage from '../page-objects/login.js'
 import checkOutFlow from '../page-objects/checkOut.js'
 
 
-describe.skip('Adding an item to cart', () => {
+describe('Adding an item to cart', () => {
     beforeEach(() => {
         cy.visit('/')
     })
@@ -37,14 +37,13 @@ describe.skip('Adding an item to cart', () => {
         loginPage.login('standard_user', 'secret_sauce')
         cy.get(loginPage.inventoryList).should('be.visible')
 
-        // addToCart.addCart()
+        addToCart.addMultipleCartItems()
         cy.get(addToCart.cartNumber).should('have.text', 3)
-        // cy.get(addToCart.removeSauceLabBoltButton).should('be.visible')
-        cy.get(addToCart.cartItemName).should('have.text', 'Sauce Labs Bolt T-Shirt')
+        cy.get(addToCart.cartItemName).should('have.text', 'Sauce Labs Bolt T-ShirtSauce Labs BackpackSauce Labs Bike Light')
 
         checkOutFlow.checkOut('Colleen', 'Williams', '00000')
-        // cy.get(checkOutFlow.itemDescriptionName).should('have.text', 'Sauce Labs Bolt T-Shirt')
-        // cy.get(checkOutFlow.itemPrice).should('have.text', '$15.99')
+        cy.get(checkOutFlow.itemDescriptionName).should('have.text', 'Sauce Labs Bolt T-ShirtSauce Labs BackpackSauce Labs Bike Light')
+        cy.get(checkOutFlow.itemPrice).should('have.text', '$15.99$29.99$9.99')
 
         checkOutFlow.completeCheckOut()
         cy.get(checkOutFlow.completeMessage).should('have.text', 'Checkout: Complete!')
