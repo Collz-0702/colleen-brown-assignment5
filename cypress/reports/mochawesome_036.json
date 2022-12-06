@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-12-02T18:15:06.048Z",
+    "end": "2022-12-02T18:15:12.720Z",
+    "duration": 6672,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ab3e82d6-c3b6-462a-b8d7-3d02d0651cbc",
+      "title": "",
+      "fullFile": "cypress\\test-files\\addToCartOneItem.cy.js",
+      "file": "cypress\\test-files\\addToCartOneItem.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5780d058-b4b7-41bd-9777-d60710ff5053",
+          "title": "Adding an item to cart",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should login with a valid user",
+              "fullTitle": "Adding an item to cart should login with a valid user",
+              "timedOut": null,
+              "duration": 2089,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_login.default.login('standard_user', 'secret_sauce');\ncy.get(_login.default.inventoryList).should('be.visible');",
+              "err": {},
+              "uuid": "ec99319d-9e6c-495f-929a-65f47f00a2f8",
+              "parentUUID": "5780d058-b4b7-41bd-9777-d60710ff5053",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should add Sauce Labs Bolt T-shirt item to cart",
+              "fullTitle": "Adding an item to cart should add Sauce Labs Bolt T-shirt item to cart",
+              "timedOut": null,
+              "duration": 4512,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_addToCart.default.addCart();\ncy.get(_addToCart.default.cartIcon).should('have.text', 1); // cy.get(addToCart.removeSauceLabBoltButton).should('be.visible')\ncy.get(_addToCart.default.cartItemName).should('have.text', 'Sauce Labs Bolt T-shirt');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#item_1_title_link`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#item_1_title_link`, but never found it.\n    at addToCart.addCart (webpack:///./cypress/page-objects/addToCart.js:23:30)\n    at Context.eval (webpack:///./cypress/test-files/addToCartOneItem.cy.js:14:18)",
+                "diff": null
+              },
+              "uuid": "e0e2a307-ef75-44ec-a5a8-99a0c9db82ae",
+              "parentUUID": "5780d058-b4b7-41bd-9777-d60710ff5053",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ec99319d-9e6c-495f-929a-65f47f00a2f8"
+          ],
+          "failures": [
+            "e0e2a307-ef75-44ec-a5a8-99a0c9db82ae"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 6601,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

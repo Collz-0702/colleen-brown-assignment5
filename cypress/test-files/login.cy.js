@@ -1,7 +1,7 @@
 
 import loginPage from '../page-objects/login.js'
 
-describe('loginPage', () => {
+describe.skip('loginPage', () => {
     beforeEach(() => {
         cy.visit('/')
     })

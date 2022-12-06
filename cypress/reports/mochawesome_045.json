@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 2,
+    "failures": -1,
+    "start": "2022-12-02T18:25:37.794Z",
+    "end": "2022-12-02T18:25:37.823Z",
+    "duration": 29,
+    "testsRegistered": 2,
+    "passPercent": null,
+    "pendingPercent": 100,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 2,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "cc4de3a4-f789-4d0c-834c-600485dc87d5",
+      "title": "",
+      "fullFile": "cypress\\test-files\\addToCartOneItem.cy.js",
+      "file": "cypress\\test-files\\addToCartOneItem.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "33b8c0e3-7cca-4430-bffd-e6dd7c4dc048",
+          "title": "Adding an item to cart",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should login with a valid user",
+              "fullTitle": "Adding an item to cart should login with a valid user",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_login.default.login('standard_user', 'secret_sauce');\ncy.get(_login.default.inventoryList).should('be.visible');",
+              "err": {},
+              "uuid": "ba87ae52-8f0b-452d-8dd0-829a98efc0dd",
+              "parentUUID": "33b8c0e3-7cca-4430-bffd-e6dd7c4dc048",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "should add Sauce Labs Bolt T-shirt item to cart",
+              "fullTitle": "Adding an item to cart should add Sauce Labs Bolt T-shirt item to cart",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_addToCart.default.addCart();\ncy.get(_addToCart.default.cartIcon).should('have.text', 1); // cy.get(addToCart.removeSauceLabBoltButton).should('be.visible')\ncy.get(_addToCart.default.cartItemName).should('have.text', 'Sauce Labs Bolt T-shirt');",
+              "err": {},
+              "uuid": "6cbf2a60-2ace-4fe5-99f8-093e09141e8e",
+              "parentUUID": "33b8c0e3-7cca-4430-bffd-e6dd7c4dc048",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [
+            "ba87ae52-8f0b-452d-8dd0-829a98efc0dd",
+            "6cbf2a60-2ace-4fe5-99f8-093e09141e8e"
+          ],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
