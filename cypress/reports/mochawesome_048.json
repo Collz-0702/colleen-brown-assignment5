@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-12-03T13:04:21.759Z",
+    "end": "2022-12-03T13:04:28.148Z",
+    "duration": 6389,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5f49d3c2-4752-48ce-8edb-0a10c3625cf2",
+      "title": "",
+      "fullFile": "cypress\\test-files\\addToCartOneItem.cy.js",
+      "file": "cypress\\test-files\\addToCartOneItem.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ea991913-1de2-420c-8f3d-ce89c758167b",
+          "title": "Adding an item to cart",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should add Sauce Labs Bolt T-shirt item to cart",
+              "fullTitle": "Adding an item to cart should add Sauce Labs Bolt T-shirt item to cart",
+              "timedOut": null,
+              "duration": 6304,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_login.default.login('standard_user', 'secret_sauce');\ncy.get(_login.default.inventoryList).should('be.visible');\n_addToCart.default.addCart();\ncy.get(_addToCart.default.cartIcon).should('have.text', 1);\ncy.get(_addToCart.default.removeSauceLabBoltButton).should('be.visible');\ncy.get(_addToCart.default.cartItemName).should('have.text', 'Sauce Labs Bolt T-shirt');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<div.inventory_item_name>' to have text 'Sauce Labs Bolt T-shirt', but the text was 'Sauce Labs Bolt T-Shirt'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<div.inventory_item_name>' to have text 'Sauce Labs Bolt T-shirt', but the text was 'Sauce Labs Bolt T-Shirt'\n    at Context.eval (webpack:///./cypress/test-files/addToCartOneItem.cy.js:16:39)",
+                "diff": "- 'Sauce Labs Bolt T-Shirt'\n+ 'Sauce Labs Bolt T-shirt'\n"
+              },
+              "uuid": "f9c7d122-b10b-4ca9-808b-f159a1c763be",
+              "parentUUID": "ea991913-1de2-420c-8f3d-ce89c758167b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "f9c7d122-b10b-4ca9-808b-f159a1c763be"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 6304,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 3,
+    "failures": -2,
+    "start": "2022-12-03T13:26:03.252Z",
+    "end": "2022-12-03T13:26:03.281Z",
+    "duration": 29,
+    "testsRegistered": 3,
+    "passPercent": null,
+    "pendingPercent": 100,
+    "other": 2,
+    "hasOther": true,
+    "skipped": 3,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "3f1104c8-48ea-4d4c-9de6-26b9f5f75176",
+      "title": "",
+      "fullFile": "cypress\\test-files\\login.cy.js",
+      "file": "cypress\\test-files\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6ed7a565-f638-43a0-b50f-4103a8a578dd",
+          "title": "loginPage",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should login with a valid user",
+              "fullTitle": "loginPage should login with a valid user",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_login.default.login('standard_user', 'secret_sauce');\ncy.get(_login.default.inventoryList).should('be.visible');",
+              "err": {},
+              "uuid": "c08c33e5-adc8-4e05-8dd5-2e35489c3058",
+              "parentUUID": "6ed7a565-f638-43a0-b50f-4103a8a578dd",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "should not login with lockedOutUser",
+              "fullTitle": "loginPage should not login with lockedOutUser",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_login.default.login('locked_out_user', 'secret_sauce');\ncy.get(_login.default.lockedOutUser).should('be.visible');",
+              "err": {},
+              "uuid": "f314dd6e-cf31-426b-9ac2-cc0f1e6c817e",
+              "parentUUID": "6ed7a565-f638-43a0-b50f-4103a8a578dd",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "should not login with an incorrect password",
+              "fullTitle": "loginPage should not login with an incorrect password",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_login.default.login('locked_out_user', '$ecret$auce');\ncy.get(_login.default.lockedOutUser).should('be.visible');",
+              "err": {},
+              "uuid": "13e9d2b8-1b51-476a-af29-f383037b79a4",
+              "parentUUID": "6ed7a565-f638-43a0-b50f-4103a8a578dd",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [
+            "c08c33e5-adc8-4e05-8dd5-2e35489c3058",
+            "f314dd6e-cf31-426b-9ac2-cc0f1e6c817e",
+            "13e9d2b8-1b51-476a-af29-f383037b79a4"
+          ],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

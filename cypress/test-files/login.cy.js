@@ -8,6 +8,7 @@ describe.skip('loginPage', () => {
 
     it('should login with a valid user', () => {
         loginPage.login('standard_user', 'secret_sauce')
+        cy.url().should('contain', 'inventory')
         cy.get(loginPage.inventoryList).should('be.visible')
 
 
@@ -15,12 +16,13 @@ describe.skip('loginPage', () => {
     it('should not login with lockedOutUser', () => {
         loginPage.login('locked_out_user', 'secret_sauce')
         cy.get(loginPage.lockedOutUser).should('be.visible')
-
+        // another assertion here
 
     })
     it('should not login with an incorrect password', () => {
         loginPage.login('locked_out_user', '$ecret$auce')
         cy.get(loginPage.lockedOutUser).should('be.visible')
+        // another assertion here
 
     })
 })
