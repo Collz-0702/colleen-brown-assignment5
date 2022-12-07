@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-12-07T02:36:53.854Z",
+    "end": "2022-12-07T02:37:00.101Z",
+    "duration": 6247,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f916ffaf-31b6-465c-8965-9f5fb89273db",
+      "title": "",
+      "fullFile": "cypress\\test-files\\sort.cy.js",
+      "file": "cypress\\test-files\\sort.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d7bceace-8b57-4899-861a-46124d758dd6",
+          "title": "Sorting items names and prices",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should sort products from A-Z",
+              "fullTitle": "Sorting items names and prices should sort products from A-Z",
+              "timedOut": null,
+              "duration": 1009,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_login.default.login('standard_user', 'secret_sauce');\n_sortdata.default.products.sort();\ncy.get(_addToCart.default.cartItemName).each(($elem, index) => {\n  expect($elem.text()).equal(_sortdata.default.products[index].name);\n});",
+              "err": {},
+              "uuid": "57994203-e86d-469e-bd91-1b0d021d36e5",
+              "parentUUID": "d7bceace-8b57-4899-861a-46124d758dd6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should sort products from price low to high",
+              "fullTitle": "Sorting items names and prices should sort products from price low to high",
+              "timedOut": null,
+              "duration": 5121,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_login.default.login('standard_user', 'secret_sauce');\n_productdetails.default.sortProducts(_sortdata.default.sort['Low to High']);\n_sortdata.default.products.sort((a, b) => a.price - b.price);\ncy.get(_checkOut.default.itemPrice).each(($elem, index) => {\n  expect($elem.text()).equal(`$${_sortdata.default.products[index].price}`);\n});",
+              "err": {
+                "message": "CypressError: Timed out retrying after 4000ms: `cy.select()` failed because it could not find a single `<option>` with value, index, or text matching: `lowHigh`\n\nhttps://on.cypress.io/select",
+                "estack": "CypressError: Timed out retrying after 4000ms: `cy.select()` failed because it could not find a single `<option>` with value, index, or text matching: `lowHigh`\n\nhttps://on.cypress.io/select\n    at getOptions (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:136668:80)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:11327:23)\n    at Promise.attempt.Promise.try (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:8601:29)\n    at retryOptions (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:136706:67)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:11327:23)\n    at Promise.attempt.Promise.try (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:8601:29)\n    at whenStable (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:153099:65)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:152508:14)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:11327:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:9262:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:9319:18)\n    at Promise._settlePromise0 (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:9364:10)\n    at Promise._settlePromises (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:9444:18)\n    at Promise._fulfill (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:9388:18)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:11002:46)\nFrom Your Spec Code:\n    at Products.sortProducts (webpack:///./cypress/page-objects/productdetails.js:10:40)\n    at Context.eval (webpack:///./cypress/test-files/sort.cy.js:22:17)",
+                "diff": null
+              },
+              "uuid": "b569dae7-fb1c-424c-a007-0568c225ca24",
+              "parentUUID": "d7bceace-8b57-4899-861a-46124d758dd6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "57994203-e86d-469e-bd91-1b0d021d36e5"
+          ],
+          "failures": [
+            "b569dae7-fb1c-424c-a007-0568c225ca24"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 6130,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
