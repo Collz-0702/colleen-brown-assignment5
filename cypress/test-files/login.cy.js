@@ -19,7 +19,7 @@ describe('Logining onto the platform', () => {
         cy.get(loginPage.lockedOutUser).should('have.text', 'Epic sadface: Sorry, this user has been locked out.')
 
     })
-    it('should not login with an incorrect password', () => {
+    it('should not login with an incorrect credentials', () => {
         loginPage.login('locked_out_user', '$ecret$auce')
         cy.get(loginPage.lockedOutUser).should('be.visible')
         cy.get(loginPage.lockedOutUser).should('have.text', 'Epic sadface: Username and password do not match any user in this service')
