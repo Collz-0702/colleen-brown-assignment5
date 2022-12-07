@@ -8,7 +8,7 @@ module.exports = {
     lockedOutUser: {
         userName: 'locked_out_user',
         passWord: 'secret_sauce',
-        errorMsg: 'Sorry, this user has been locked out.'
+        errorMsg: 'Epic sadface: Sorry, this user has been locked out.'
     },
     problemUser: {
         userName: 'problem_user',
