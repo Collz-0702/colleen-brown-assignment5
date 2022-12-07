@@ -37,3 +37,6 @@ Execute tests in a different browser
 npx cypress run --browser firefox
 
 N.B. The browser must be installed on the device.
+
+Negative Tests can be found within the login test file
+Adding an item or multiple items along with the checkoutflow can be found in the addToCartCheckout test file
