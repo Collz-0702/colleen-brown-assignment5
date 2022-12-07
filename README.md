@@ -1,4 +1,4 @@
-# colleen-brown-assignment5
+# Colleen-Brown-assignment5
 This is the completion of the Cypress Framework assignment to compliment the knowledge and practice gain in the Automation Bootcamp
 
 
